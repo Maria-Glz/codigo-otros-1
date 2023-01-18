@@ -4,7 +4,7 @@ const $n = document.querySelector('name');
 const $b = document.querySelector('#blog');
 const $l = document.querySelector('.location');
 
-function displayUser(username) {
+async function displayUser(username) {
   $n.textContent = 'cargando...';
   const response = await fetch(`${usersEndpoint}/${username}`);
   console.log(data);
@@ -16,7 +16,7 @@ function displayUser(username) {
 function handleError(err) {
   console.log('OH NO!');
   console.log(err);
-  n.textContent = `Algo salió mal: ${err}`
+  $n.textContent = `Algo salió mal: ${err}`;
 }
 
 displayUser('stolinski').catch(handleError);
